@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+// Primary colors
+$very-dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+
+// Neutral colors
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+// Typeography
+$body-copy-font-size: 15px;
+$font-family: 'Spartan', sans-serif;
+
+// Layout widths
+//  Mobile: 375px
+//  Desktop: 1440px
+
 body {
-	background-color: rgb(102, 255, 0);
+	font-family: $font-family;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.image {
+	background-color: white;
+	width: 200px;
+	height: 200px;
+	border: 1px solid salmon;
+}
+
+.bg-pattern-top-desktop {
+	width: 200px;
+	height: 200px;
+}
+
+.test-image {
+	border: 1px solid salmon;
 }
