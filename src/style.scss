@@ -17,26 +17,182 @@ $font-family: 'Spartan', sans-serif;
 //  Mobile: 375px
 //  Desktop: 1440px
 
-body {
-	font-family: $font-family;
-}
-
 * {
 	box-sizing: border-box;
 }
 
-.image {
-	background-color: white;
-	width: 200px;
-	height: 200px;
-	border: 1px solid salmon;
+body {
+	font-family: $font-family;
+	font-size: $body-copy-font-size;
+	margin: 0;
+	background: url('./images/bg-pattern-top-mobile.svg'),
+		url('./images/bg-pattern-bottom-mobile.svg');
+	background-repeat: no-repeat;
+	background-position: top left, bottom right;
+	// make images stay in place
+	background-size: contain;
 }
 
-.bg-pattern-top-desktop {
-	width: 200px;
-	height: 200px;
+p {
+	margin: 0;
+	font-size: 0.8rem;
+	line-height: 1.3rem;
 }
 
-.test-image {
-	border: 1px solid salmon;
+.socialproof {
+	// margin: 78px 30px 100px;
+	margin: 4.875rem 1.875rem 6.25rem;
+}
+
+.infobox {
+	text-align: center;
+	margin-bottom: 49px;
+}
+
+.infobox-text {
+	h1 {
+		color: $very-dark-magenta;
+	}
+	p {
+		color: $dark-grayish-magenta;
+	}
+}
+
+.infobox-ratings {
+	.rating {
+		background-color: $light-grayish-magenta;
+		border-radius: 6px;
+		padding: 15px 15px 15px;
+		margin: 16px 0;
+
+		.stars {
+			padding-top: 4px;
+			padding-bottom: 10px;
+		}
+
+		p {
+			font-weight: 700;
+			color: $very-dark-magenta;
+		}
+	}
+}
+
+.card {
+	background-color: $very-dark-magenta;
+	color: white;
+	border-radius: 8px;
+	padding: 30px;
+	margin-bottom: 15px;
+
+	.card-top {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+	}
+
+	.card-image img {
+		border-radius: 50%;
+		width: 42px;
+	}
+
+	.card-top-header {
+		& h5.name {
+			margin-top: 3px;
+			margin-bottom: 5px;
+		}
+
+		& p.status {
+			color: $soft-pink;
+		}
+	}
+}
+
+//  Desktop: 1440px
+@media screen and (min-width: 500px) {
+	// background images
+	body {
+		background: url('./images/bg-pattern-top-desktop.svg'),
+			url('./images/bg-pattern-bottom-desktop.svg');
+		background-repeat: no-repeat;
+		background-position: top left, bottom right;
+		// make images stay in place
+		background-size: auto;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.socialproof {
+		margin: 7.8rem 10.12rem 6.375rem;
+	}
+
+	.infobox {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: 276px;
+		margin-bottom: 15px;
+
+		& .infobox-text {
+			text-align: left;
+			padding-right: 125px;
+
+			h1 {
+				margin-right: 54px;
+				font-size: 2.6rem;
+				margin-bottom: 12px;
+				margin-top: 0;
+			}
+		}
+
+		& .infobox-ratings {
+			display: flex;
+			flex-direction: column;
+
+			.rating:nth-of-type(1) {
+				align-self: flex-start;
+			}
+
+			.rating:nth-of-type(2) {
+				align-self: center;
+			}
+
+			.rating:nth-of-type(3) {
+				align-self: flex-end;
+			}
+		}
+
+		& .infobox-ratings {
+			.rating {
+				text-align: left;
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				justify-items: center;
+				align-items: center;
+				width: 75%;
+				margin: 9px;
+
+				.stars {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.cards-container {
+		display: flex;
+		justify-content: space-between;
+		height: 267px;
+
+		.card {
+			width: 32%;
+			height: 234px;
+			margin: 0;
+		}
+
+		.card:nth-of-type(2) {
+			align-self: center;
+		}
+
+		.card:nth-of-type(3) {
+			align-self: flex-end;
+		}
+	}
 }
